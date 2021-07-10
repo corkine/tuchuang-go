@@ -1,7 +1,7 @@
 export GOROOT=/usr/local/go
 export GO111MODULE=on
 
-cd /go-tuchuang
+cd /go-tuchuang/src
 
 git pull
 
