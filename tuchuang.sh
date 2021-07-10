@@ -7,7 +7,7 @@ git pull
 
 kill $(ps axu | grep "/tmp/go.*/exe/tuchuang.*" | grep -v grep | awk '{print $2}')
 nohup go run tuchuang.go 1>>/var/log/go_tuchuang.log 2>&1 &
-echo "Inspur Check Server run on Port \
+echo "goTuchuang run on Port \
 $(ps aux | grep "go run.*tuchuang.go" | grep -v grep | awk '{print $2}')"
 
 echo "========================================================================="
