@@ -30,7 +30,10 @@ func HandleError(err error) {
 var config Config
 
 const LOG = `0.0.1 2021-07-06 实现基本功能
-0.0.2 2021年7月10日 试图修复 CROS 问题`
+0.0.2 2021年7月10日 试图修复 CROS 问题
+0.0.3 2021年7月10日 整理项目结构，修复一个 port parse 的问题`
+
+const AllowOrigin = "http://static2.mazhangjing.com"
 
 var VERSION = func() string {
 	lines := strings.Split(LOG, "\n")
@@ -133,11 +136,11 @@ func HandlePut(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleCROS(w http.ResponseWriter) {
-	w.Header().Set("Access-Control-Allow-Origin", "http://static2.mazhangjing.com")
+	w.Header().Set("Access-Control-Allow-Origin", AllowOrigin)
 	w.Header().Set("Access-Control-Allow-Methods", "POST")
 }
 
-var port = flag.Int("-port", 8089, "HTTP Server Port")
+var port = flag.Int("port", 8089, "HTTP Server Port")
 
 func Serve() {
 	flag.Parse()
